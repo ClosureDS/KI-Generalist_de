@@ -98,14 +98,13 @@ function initForms() {
       `;
 
       try {
-        const response = await fetch(getEndpoint(), {
+        await fetch(getEndpoint(), {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source })
+          mode: 'no-cors',
+          body: new URLSearchParams({ email, source })
         });
 
-        if (!response.ok) throw new Error('Request failed');
-
+        // no-cors: request is sent, but response is opaque — assume success
         showToast({
           title: 'Erfolgreich angemeldet!',
           description: 'Sie stehen jetzt auf der Warteliste. Wir melden uns bald bei Ihnen.'
