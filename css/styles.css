@@ -1,0 +1,343 @@
+/* ===== Design Tokens ===== */
+
+:root {
+  --bg-primary: #000000;
+  --bg-surface: #0A0A0A;
+  --bg-glass: rgba(255,255,255,0.03);
+  --accent-primary: #FF5100;
+  --accent-purple: #7B5CFF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+  --border-glow: rgba(255,81,0,0.15);
+  --border-glass: rgba(255,255,255,0.08);
+}
+
+/* ===== Base ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Background Layer System ===== */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(255,81,0,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(123,92,255,0.04) 0%, transparent 50%);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== Glassmorphism ===== */
+
+.glass-card {
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.glass-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.glass-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,81,0,0.3);
+  border-color: rgba(255,81,0,0.3);
+}
+
+/* ===== Typography ===== */
+
+.serif-accent {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  text-shadow: 0 0 40px rgba(255,81,0,0.3);
+}
+
+/* ===== Keyframe Animations ===== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+}
+
+@keyframes gradientDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
+}
+
+/* ===== Hero staggered animations ===== */
+
+.hero-fade-1 {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.hero-fade-2 {
+  animation: fadeUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.hero-fade-3 {
+  animation: fadeUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* ===== Scroll-triggered animations ===== */
+
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays */
+.stagger-1 { transition-delay: 0s; }
+.stagger-2 { transition-delay: 0.1s; }
+.stagger-3 { transition-delay: 0.2s; }
+.stagger-4 { transition-delay: 0.3s; }
+
+/* ===== Service cards hover ===== */
+
+.service-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: rgba(255,81,0,0.2);
+  box-shadow: 0 0 40px rgba(255,81,0,0.06);
+  transform: translateY(-4px);
+}
+
+/* ===== Loader spinner ===== */
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ===== Toast container ===== */
+
+#toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 320px;
+  max-width: 420px;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: toastIn 0.3s ease-out forwards;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.toast.closing {
+  animation: toastOut 0.3s ease-in forwards;
+}
+
+.toast.destructive {
+  border-color: rgba(220, 38, 38, 0.3);
+  background: rgba(26, 10, 10, 0.95);
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.125rem;
+}
+
+.toast-description {
+  font-size: 0.8125rem;
+  color: #9CA3AF;
+}
+
+.toast.destructive .toast-description {
+  color: #fca5a5;
+}
+
+.toast-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #6B7280;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s;
+  line-height: 0;
+}
+
+.toast-close:hover {
+  color: #fff;
+}
+
+/* ===== Form input focus ring ===== */
+
+input:focus {
+  outline: 2px solid rgba(255,81,0,0.5);
+  outline-offset: 2px;
+}
+
+input.glass-input:focus {
+  outline: none;
+}
+
+/* ===== Hero background glow ===== */
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,81,0,0.15) 0%, transparent 60%);
+}
+
+.hero-glow-orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  animation: gradientDrift 15s ease-in-out infinite;
+}
+
+/* ===== Announcement pill ===== */
+
+.announcement-pill {
+  background: rgba(255,81,0,0.08);
+  border: 1px solid rgba(255,81,0,0.2);
+}
+
+/* ===== Focus-visible for accessibility ===== */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(255,81,0,0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ===== Process connecting line glow ===== */
+
+.process-line {
+  position: relative;
+}
+
+.process-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  filter: blur(4px);
+  background: inherit;
+  opacity: 0.5;
+}

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonome KI-Lösungen | KI-Generalist.de</title>
+  <meta name="description" content="Transformieren Sie Ihr Unternehmen mit KI-Agenten, intelligenter Workflow-Automatisierung und prozessnaher Software.">
+  <meta property="og:title" content="Autonome KI-Lösungen | KI-Generalist.de">
+  <meta property="og:description" content="Automatisierte Arbeitsprozesse mit KI – schnell umgesetzt und kosteneffizient.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#000000',
+            surface: '#0A0A0A',
+            primary: { DEFAULT: '#FF5100', foreground: '#ffffff' },
+            accent: '#7B5CFF',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-background text-white font-sans antialiased">
+
+  <!-- Skip Navigation -->
+  <a href="#vision" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[1001] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-full">Zum Inhalt springen</a>
+
+  <noscript>
+    <div style="background:#FF5100;color:#fff;text-align:center;padding:1rem;">
+      Diese Website benötigt JavaScript für volle Funktionalität.
+    </div>
+  </noscript>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background: Image + Dark Overlay + Teal Glow -->
+    <div class="absolute inset-0 z-0" style="background-image:url('KI-Generalist_BG.png');background-size:cover;background-position:center;background-repeat:no-repeat;">
+      <div class="absolute inset-0 bg-black/80"></div>
+    </div>
+    <!-- Glow overlay -->
+    <div class="hero-glow"></div>
+    <!-- Drifting glow orb -->
+    <div class="hero-glow-orb" style="top:-10%;left:30%;background:rgba(255,81,0,0.08);"></div>
+    <div class="hero-glow-orb" style="top:20%;right:10%;background:rgba(123,92,255,0.05);animation-delay:-5s;"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-6 text-center">
+      <!-- Announcement Pill -->
+      <div class="hero-fade-1 inline-flex items-center gap-2 announcement-pill rounded-full px-4 py-1.5 mb-8">
+        <span class="text-sm text-primary font-medium">Jetzt auf die Warteliste</span>
+        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </div>
+
+      <h1 class="hero-fade-1 text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+        Mehr <span class="serif-accent">erledigen.</span><br>Weniger Aufwand.
+      </h1>
+
+      <p class="hero-fade-2 text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
+Automatisierte Arbeitsprozesse mit KI – schnell umgesetzt und kosteneffizient.
+
+Erfahren Sie mehr über automatisierte Arbeitsprozesse.
+      </p>
+
+      <div class="hero-fade-3 max-w-md mx-auto">
+        <form class="waitlist-form w-full max-w-md mx-auto" data-source="Hero">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              placeholder="ihre@email.de"
+              required
+              aria-label="E-Mail-Adresse"
+              class="glass-input flex-1 text-white placeholder:text-gray-500 rounded-full px-5 py-3 text-sm"
+            >
+            <button
+              type="submit"
+              class="bg-primary hover:shadow-[0_0_20px_rgba(255,81,0,0.4)] text-white font-semibold px-7 py-3 rounded-full transition-all duration-300 text-sm whitespace-nowrap"
+            >Anmelden</button>
+          </div>
+        </form>
+        <a href="#services" class="inline-flex items-center gap-1 text-gray-500 hover:text-white text-sm mt-6 transition-colors">
+          Mehr erfahren
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Gradient fade at bottom -->
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
+  </section>
+
+  <!-- ===== BLOCK 2: ARBEIT WIRD NEU ORGANISIERT ===== -->
+  <section id="vision" class="min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="container mx-auto px-6 text-center py-16 md:py-24">
+      <div class="scroll-fade-up max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight">
+          Arbeit wird<br><span class="serif-accent">neu</span> organisiert.
+        </h2>
+
+        <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+KI macht Softwareentwicklung und Prozessautomatisierung erstmals für jedes Unternehmen zugänglich –
+schnell umgesetzt, einfach nutzbar und deutlich wirtschaftlicher als klassische IT-Projekte.
+        </p>
+
+        <div class="max-w-2xl mx-auto space-y-8 text-left">
+          <div class="scroll-fade-up stagger-1">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-1.5">Prozesse neu denken</h3>
+            <p class="text-base md:text-lg text-gray-400 leading-relaxed">
+Unternehmensprozesse werden direkt digital abgebildet.
+Mitarbeiter arbeiten nicht mehr in vielen Tools, sondern folgen einer klaren Oberfläche, die durch den gesamten Ablauf führt.
+            </p>
+          </div>
+          <div class="scroll-fade-up stagger-2">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-1.5">Arbeit intelligent unterstützen</h3>
+            <p class="text-base md:text-lg text-gray-400 leading-relaxed">
+KI-Agenten greifen auf Dokumente, Daten und Systeme zu.
+Sie unterstützen Entscheidungen, erledigen Routineaufgaben oder führen Prozessschritte automatisch aus.
+            </p>
+          </div>
+          <div class="scroll-fade-up stagger-3">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-1.5">Software in Tagen statt Monaten</h3>
+            <p class="text-base md:text-lg text-gray-400 leading-relaxed">
+Moderne KI-Entwicklung ermöglicht Lösungen in kurzer Zeit.
+Auch kleine und mittelständische Unternehmen können heute Software nutzen, die früher nur Großunternehmen vorbehalten war.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 3: SOFTWARE, DIE SICH DEM UNTERNEHMEN ANPASST ===== -->
+  <section id="software" class="min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="container mx-auto px-6 text-center py-16 md:py-24">
+      <div class="scroll-fade-up max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight">
+          Software folgt dem <span class="serif-accent">Prozess.</span>
+
+Nicht umgekehrt.
+        </h2>
+
+        <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+          Statt komplexer Systeme entsteht einfache Software, die direkt aus Ihren Arbeitsprozessen hervorkommt – klar, leicht nutzbar und schnell umgesetzt.
+        </p>
+
+        <div class="max-w-2xl mx-auto space-y-8 text-left">
+          <div class="scroll-fade-up stagger-1">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-1.5">Reale Abläufe analysieren</h3>
+            <p class="text-base md:text-lg text-gray-400 leading-relaxed">
+            Wir betrachten, wie in Ihrem Unternehmen tatsächlich gearbeitet wird – nicht nur, wie Prozesse dokumentiert sind.
+            </p>
+          </div>
+
+          <div class="scroll-fade-up stagger-2">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-1.5">Klare Oberflächen entwickeln</h3>
+            <p class="text-base md:text-lg text-gray-400 leading-relaxed">
+   Für jeden Prozess entsteht eine einfache Oberfläche, die Mitarbeiter Schritt für Schritt durch den Ablauf führt.
+            </p>
+          </div>
+
+                    <div class="scroll-fade-up stagger-3">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-1.5">Automatisierung integrieren</h3>
+            <p class="text-base md:text-lg text-gray-400 leading-relaxed">
+Workflows verbinden Systeme und Daten.
+KI-Agenten übernehmen einzelne Aufgaben innerhalb der Prozesse.
+            </p>
+          </div>
+
+          <div class="scroll-fade-up stagger-4">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-1.5">Schnell einsatzbereit</h3>
+            <p class="text-base md:text-lg text-gray-400 leading-relaxed">
+Durch KI-gestützte Entwicklung entstehen Lösungen deutlich schneller als klassische Softwareprojekte – oft innerhalb weniger Tage.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="py-20 md:py-32 bg-background relative">
+    <div class="container mx-auto px-6">
+      <div class="scroll-fade-up text-center mb-16">
+        <div class="inline-block mb-4">
+          <span class="announcement-pill text-primary px-4 py-2 rounded-full text-sm font-semibold">
+            Coming Soon
+          </span>
+        </div>
+        <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+          Unsere <span class="serif-accent">Services</span>
+        </h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+       So bringen wir KI in Ihre realen Arbeitsprozesse.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <!-- Card 1: Autonome KI-Agenten -->
+        <div class="scroll-fade-up stagger-1 service-card glass-card rounded-3xl p-7">
+          <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+            <!-- Zap Icon -->
+            <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Autonome KI-Agenten</h3>
+          <p class="text-gray-400 leading-relaxed">
+Digitale Agenten übernehmen Aufgaben direkt in Ihren Arbeitsprozessen – von Analyse bis Ausführung.
+          </p>
+        </div>
+
+        <!-- Card 2: Workflow-Automatisierung -->
+        <div class="scroll-fade-up stagger-2 service-card glass-card rounded-3xl p-7">
+          <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+            <!-- Workflow Icon -->
+            <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="6" height="6" rx="1"></rect>
+              <rect x="15" y="3" width="6" height="6" rx="1"></rect>
+              <rect x="9" y="15" width="6" height="6" rx="1"></rect>
+              <path d="M6 9v3a1 1 0 0 0 1 1h4"></path>
+              <path d="M18 9v3a1 1 0 0 1-1 1h-4"></path>
+              <path d="M12 13v2"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Workflow-Automatisierung</h3>
+          <p class="text-gray-400 leading-relaxed">
+Systeme, Daten und Abläufe werden zu automatisierten Workflows verbunden.
+          </p>
+        </div>
+
+        <!-- Card 3: Strategische Beratung -->
+        <div class="scroll-fade-up stagger-3 service-card glass-card rounded-3xl p-7">
+          <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+            <!-- Lightbulb Icon -->
+            <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+              <path d="M9 18h6"></path>
+              <path d="M10 22h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Strategische Beratung</h3>
+          <p class="text-gray-400 leading-relaxed">
+Wir analysieren Ihre Prozesse und entwickeln schnell nutzbare KI-Lösungen für den Arbeitsalltag.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS SECTION ===== -->
+  <section id="process" class="py-20 md:py-32 bg-surface relative overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="scroll-fade-up text-center mb-16">
+        <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+          Von Ihrem Prozess zur <span class="serif-accent">KI-Lösung</span>
+        </h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+          Einfache Prozesssoftware, automatisierte Workflows und KI-Agenten – schnell umgesetzt und sofort nutzbar.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <!-- Desktop: Horizontal Flow -->
+        <div class="hidden md:flex items-start justify-between relative">
+          <!-- Connecting Line -->
+          <div class="absolute left-0 right-0 h-1 bg-gradient-to-r from-primary/50 via-primary to-primary/50" style="top:4rem;z-index:0;"></div>
+
+          <!-- Step 01: Analyse -->
+          <div class="scroll-fade-up stagger-1 flex-1 relative z-10">
+            <div class="flex flex-col items-center text-center px-4">
+              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6 shadow-lg shadow-primary/50">
+                <span class="text-2xl font-bold text-white">01</span>
+              </div>
+              <div class="glass-card w-20 h-20 rounded-2xl flex items-center justify-center mb-6 border-2 border-primary/30">
+                <!-- Search Icon -->
+                <svg class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Analyse</h3>
+              <p class="text-gray-400 leading-relaxed">
+              Wir verstehen, wie in Ihrem Unternehmen gearbeitet wird.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 02: Blueprint -->
+          <div class="scroll-fade-up stagger-2 flex-1 relative z-10">
+            <div class="flex flex-col items-center text-center px-4">
+              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6 shadow-lg shadow-primary/50">
+                <span class="text-2xl font-bold text-white">02</span>
+              </div>
+              <div class="glass-card w-20 h-20 rounded-2xl flex items-center justify-center mb-6 border-2 border-primary/30">
+                <!-- FileText Icon -->
+                <svg class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <line x1="10" y1="9" x2="8" y2="9"></line>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Lösung entwickeln</h3>
+              <p class="text-gray-400 leading-relaxed">
+   Wir entwickeln eine passende KI-Lösung mit einer klaren, prozessgeführten Software.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 03: Deployment -->
+          <div class="scroll-fade-up stagger-3 flex-1 relative z-10">
+            <div class="flex flex-col items-center text-center px-4">
+              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6 shadow-lg shadow-primary/50">
+                <span class="text-2xl font-bold text-white">03</span>
+              </div>
+              <div class="glass-card w-20 h-20 rounded-2xl flex items-center justify-center mb-6 border-2 border-primary/30">
+                <!-- Rocket Icon -->
+                <svg class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                  <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                  <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                  <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Einsetzen</h3>
+              <p class="text-gray-400 leading-relaxed">
+Die Lösung ist schnell einsatzbereit und übernimmt Aufgaben im Arbeitsalltag.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile: Vertical Flow -->
+        <div class="md:hidden space-y-12">
+          <!-- Step 01 Mobile -->
+          <div class="scroll-fade-left stagger-1 relative">
+            <div class="flex items-start gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center mb-4 shadow-lg shadow-primary/50">
+                  <span class="text-xl font-bold text-white">01</span>
+                </div>
+                <div class="glass-card w-16 h-16 rounded-2xl flex items-center justify-center border-2 border-primary/30">
+                  <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+                <div class="w-1 h-24 bg-gradient-to-b from-primary to-primary/30 mt-4"></div>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="text-2xl font-bold text-white mb-3">Analyse</h3>
+                <p class="text-gray-400 leading-relaxed">
+                Wir verstehen, wie in Ihrem Unternehmen gearbeitet wird.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 02 Mobile -->
+          <div class="scroll-fade-left stagger-2 relative">
+            <div class="flex items-start gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center mb-4 shadow-lg shadow-primary/50">
+                  <span class="text-xl font-bold text-white">02</span>
+                </div>
+                <div class="glass-card w-16 h-16 rounded-2xl flex items-center justify-center border-2 border-primary/30">
+                  <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <line x1="10" y1="9" x2="8" y2="9"></line>
+                  </svg>
+                </div>
+                <div class="w-1 h-24 bg-gradient-to-b from-primary to-primary/30 mt-4"></div>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="text-2xl font-bold text-white mb-3">Lösung entwickeln</h3>
+                <p class="text-gray-400 leading-relaxed">
+                  Wir bauen eine passende KI-Lösung mit einer einfachen, prozessgeführten Software.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 03 Mobile -->
+          <div class="scroll-fade-left stagger-3 relative">
+            <div class="flex items-start gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center mb-4 shadow-lg shadow-primary/50">
+                  <span class="text-xl font-bold text-white">03</span>
+                </div>
+                <div class="glass-card w-16 h-16 rounded-2xl flex items-center justify-center border-2 border-primary/30">
+                  <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                  </svg>
+                </div>
+                <!-- No connecting line after last step -->
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="text-2xl font-bold text-white mb-3">Einsetzen</h3>
+                <p class="text-gray-400 leading-relaxed">
+                  Die Lösung ist schnell nutzbar und übernimmt Aufgaben im Alltag.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER / CTA SECTION ===== -->
+  <footer id="waitlist" class="bg-surface border-t border-white/[0.06] py-16 md:py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <!-- Waitlist CTA -->
+        <div class="scroll-fade-up text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+            Mehr <span class="serif-accent">erledigen.</span> Weniger Aufwand.
+          </h2>
+          <p class="text-xl text-gray-400 mb-8">
+Erfahren Sie, wie KI, Agenten und Workflows Arbeit automatisieren – jetzt anmelden.
+          </p>
+          <div class="flex justify-center">
+            <form class="waitlist-form w-full max-w-md mx-auto" data-source="Footer">
+              <div class="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="ihre@email.de"
+                  required
+                  aria-label="E-Mail-Adresse"
+                  class="glass-input flex-1 text-white placeholder:text-gray-500 rounded-full px-5 py-3 text-sm"
+                >
+                <button
+                  type="submit"
+                  class="bg-primary hover:shadow-[0_0_20px_rgba(255,81,0,0.4)] text-white font-semibold px-7 py-3 rounded-full transition-all duration-300 text-sm whitespace-nowrap"
+                >Anmelden</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-white/[0.06] my-12"></div>
+
+        <!-- Footer Bottom -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="text-center md:text-left">
+            <p class="text-gray-500 text-sm">
+              &copy; 2026 KI-Generalist. Alle Rechte vorbehalten.
+            </p>
+          </div>
+
+          <!-- Navigation Links -->
+          <nav aria-label="Footer-Navigation" class="flex items-center gap-6">
+            <a href="#vision" class="text-gray-400 hover:text-primary transition-colors text-sm">Ansatz</a>
+            <a href="#services" class="text-gray-400 hover:text-primary transition-colors text-sm">Services</a>
+            <a href="#process" class="text-gray-400 hover:text-primary transition-colors text-sm">Prozess</a>
+          </nav>
+
+          <!-- Rechtliche Links -->
+          <div class="flex items-center gap-6">
+            <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors text-xs">Impressum</a>
+            <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors text-xs">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
