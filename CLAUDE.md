@@ -65,9 +65,50 @@ KI-Generalist_de/
 
 - 2 Formulare (Hero + Footer) mit Klasse `.waitlist-form`
 - `data-source="Hero"` bzw. `data-source="Footer"` zur Unterscheidung
-- Sendet `{ email, source }` als JSON POST an n8n-Webhook
+- Sendet `{ eMailAdress, source }` als JSON POST an n8n-Webhook
 - Webhook-URL ist Base64-kodiert in `js/main.js` (Zeile 3–5)
 - Toast-Benachrichtigungen für Erfolg/Fehler (XSS-sicher via `textContent`)
+
+## n8n-Workflow (Backend)
+
+### Aktiver Workflow: `KI-Generalist Automation v2 (gehärtet)`
+- **Workflow-ID:** `GzOcJUfu3RcIV8R6`
+- **Webhook-Pfad:** `be045531-d03c-4ec8-bc6d-28055eefa009`
+- **Webhook-URL:** `https://n8n.ki-agents-solutions.de/webhook/be045531-d03c-4ec8-bc6d-28055eefa009`
+- **Error-Workflow:** `3bC1cK3SPBTWaCre` (Telegram Alert, aktiv)
+
+### Alter Workflow (deaktiviert)
+- **Name:** `KI-Generalist Automation`
+- **Workflow-ID:** `S26AuGaCTpaRzOIE`
+- **Status:** Deaktiviert seit 2026-03-09, ersetzt durch v2
+
+### Workflow-Architektur (v2)
+
+```
+Webhook → Input Validation → [gültig?]
+  ├─ Nein → Respond 400
+  └─ Ja → Respond 200 → Email-Validierung → Duplikat-Prüfung
+       → Edit Fields → Insert Row → Domain-Klassifizierung → [Business?]
+            ├─ Nein → Freemail/Disposable Skip
+            └─ Ja → Approval anfragen (Gmail sendAndWait) → [Freigabe?]
+                  ├─ Nein → Abgelehnt Stop
+                  └─ Ja → AI Research Agent (GPT-4o + SerpAPI)
+                       → Output Validation → [gültig?]
+                            ├─ Nein → Output-Fehler Alert
+                            └─ Ja → Report senden
+```
+
+### Wichtige Merkmale (v2)
+- **CORS:** Nur `https://ki-generalist.de` (v1 hatte `*`)
+- **Response-Mode:** `responseNode` — sofortige Antwort ans Frontend (200/400)
+- **Input-Validation:** Schema-Prüfung, Email-Normalisierung (lowercase, trim)
+- **Domain-Klassifizierung:** ~60 Freemail + Disposable-Domains (Code-Node)
+- **Human Approval Gate:** Gmail sendAndWait vor AI-Agent-Kosten
+- **AI Agent:** GPT-4o via OpenRouter, SerpAPI (DE, max 5 Ergebnisse, max 10 Iterationen)
+- **Output-Validation:** Pflichtabschnitte, Mindestlänge, verbotene HTML-Tags
+- **Error-Handling:** Error-Workflow (Telegram), Insert Row mit `onError: continueRegularOutput`
+- **DataTable:** `KI-Generalist-Anmeldungen` (ID: `DjYUC5oiFBp1Waxo`)
+- **Credentials:** Gmail OAuth2, OpenRouter API, SerpAPI (in n8n gespeichert)
 
 ## Animationen
 
@@ -81,7 +122,8 @@ KI-Generalist_de/
 ## Wichtige Hinweise
 
 - **Tailwind CDN** ist nur für Entwicklung — vor Produktion auf Build-Prozess umstellen
-- **Webhook-URL liegt im Frontend** — für Spam-Schutz serverseitigen Proxy einrichten
+- **Webhook-URL liegt im Frontend** (Base64-kodiert) — v2-Workflow hat CORS + Input-Validation als Schutz
 - **Impressum/Datenschutz** sind Platzhalter (`href="#"`) — müssen mit echten Seiten verknüpft werden
 - Keine Navigation/Header — reine Scroll-Seite mit Footer-Ankerlinks
 - Sprache: Deutsch (`lang="de"`)
+- **Gmail-Credentials** müssen im n8n-Editor manuell an die 3 Gmail-Nodes zugewiesen werden
