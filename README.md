@@ -25,8 +25,10 @@ KI-Generalist_de/
 ├── index.html           # Komplettes HTML (Single Page)
 ├── css/styles.css       # Design-Tokens, Glassmorphism, Animationen, Toasts
 ├── js/main.js           # Formular-Handling, Scroll-Observer, Webhook
+├── Logo/
+│   └── KI-Agenten-Services.svg  # Logo (fixed, oben links)
 ├── KI-Generalist_BG.png # Hero-Hintergrundbild
-├── CLAUDE.md            # Projekt-Kontext fuer Claude Code
+├── .claude/CLAUDE.md    # Projekt-Kontext fuer Claude Code
 └── README.md
 ```
 
@@ -68,7 +70,8 @@ npx serve .
 - **Tailwind CDN** ist nur fuer Entwicklung — vor Produktion auf Build-Prozess umstellen
 - **Webhook-URL liegt im Frontend** — fuer Spam-Schutz serverseitigen Proxy einrichten
 - **Impressum/Datenschutz** sind Platzhalter (`href="#"`) — muessen verlinkt werden
-- Keine Navigation — reine Scroll-Seite mit Footer-Ankerlinks
+- **Logo** oben links fixiert (`Logo/KI-Agenten-Services.svg`), verlinkt auf Hero
+- Keine Navigation — reine Scroll-Seite mit Logo + Footer-Ankerlinks
 - Sprache: Deutsch (`lang="de"`)
 
 ## Lizenz

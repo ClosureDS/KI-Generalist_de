@@ -21,6 +21,8 @@ KI-Generalist_de/
 ├── index.html              # Komplettes HTML (Single Page)
 ├── css/styles.css          # Design-Tokens, Glassmorphism, Animationen, Toast-Styles
 ├── js/main.js              # Formular-Handling, Scroll-Observer, Webhook-Anbindung
+├── Logo/
+│   └── KI-Agenten-Services.svg  # Logo (fixed, oben links)
 ├── KI-Generalist_BG.png    # Hero-Hintergrundbild
 └── *.jpg                   # Referenz-Screenshots der Sektionen
 ```
@@ -124,6 +126,7 @@ Webhook → Input Validation → [gültig?]
 - **Tailwind CDN** ist nur für Entwicklung — vor Produktion auf Build-Prozess umstellen
 - **Webhook-URL liegt im Frontend** (Base64-kodiert) — v2-Workflow hat CORS + Input-Validation als Schutz
 - **Impressum/Datenschutz** sind Platzhalter (`href="#"`) — müssen mit echten Seiten verknüpft werden
-- Keine Navigation/Header — reine Scroll-Seite mit Footer-Ankerlinks
+- **Logo** oben links fixiert (`Logo/KI-Agenten-Services.svg`), verlinkt auf `#hero`
+- Keine Navigation/Header — reine Scroll-Seite mit Logo + Footer-Ankerlinks
 - Sprache: Deutsch (`lang="de"`)
 - **Gmail-Credentials** müssen im n8n-Editor manuell an die 3 Gmail-Nodes zugewiesen werden
